@@ -63,7 +63,6 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
         public ActionResult Create(int daiLyId,  System.DateTime ngayDangKy)
         {
             ViewBag.DaiLyId = daiLyId;
-            ViewBag.TenDaiLy = db.DaiLies.Where(m => m.DaiLyId == daiLyId).Select(m => m.TenDaiLy).FirstOrDefault();
             ViewBag.NgayDangKy = ngayDangKy;
             List<PhieuDangKyVM> listPDKVM = new List<PhieuDangKyVM>();
             foreach(var item in db.LoaiVeSoes)
@@ -121,7 +120,7 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.DaiLyId = new SelectList(db.DaiLies, "DaiLyId", "TenDaiLy", phieuDangKy.DaiLyId);
-            ViewBag.LoaiVeSoId = new SelectList(db.LoaiVeSoes, "LoaiVeSoId", "TenTinh", phieuDangKy.DaiLyId);
+            ViewBag.LoaiVeSoId = new SelectList(db.LoaiVeSoes, "LoaiVeSoId", "TenTinh", phieuDangKy.LoaiVeSoId);
             return View(phieuDangKy);
         }
 
@@ -130,7 +129,7 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PhieuDangKyId,DaiLyId,NgayDangKy,SLDangKy")] PhieuDangKy phieuDangKy)
+        public ActionResult Edit([Bind(Include = "PhieuDangKyId,DaiLyId,NgayDangKy,SLDangKy,LoaiVeSoId")] PhieuDangKy phieuDangKy)
         {
             if (ModelState.IsValid)
             {
