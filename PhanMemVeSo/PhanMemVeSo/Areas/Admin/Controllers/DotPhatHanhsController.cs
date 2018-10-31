@@ -33,10 +33,9 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
             }
             else
             {
-                s = ngayPhatGanNhat.ToString("yyyy-MM-dd");
+                s = System.DateTime.Now.ToString("yyyy-MM-dd");
             }
-            
-            ViewBag.SearchDate = s;
+                ViewBag.SearchDate = s;
             return View(listPhatHanh);
         }
 
@@ -110,12 +109,16 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
             {
                 foreach (var item in dotPhatHanh.ListPhieuPhatHanh)
                 {
-                    PhieuPhatHanh phieuPhatHanh = new PhieuPhatHanh();
-                    phieuPhatHanh.LoaiVeSoId = loaiVeSoId;
-                    phieuPhatHanh.NgayPhat = ngayPhat;
-                    phieuPhatHanh.DaiLyId = db.DaiLies.Where(m=>m.TenDaiLy==item.TenDaiLy).Select(m=>m.DaiLyId).FirstOrDefault();
-                    phieuPhatHanh.SLPhat = item.SLPhat;
-                    db.PhieuPhatHanhs.Add(phieuPhatHanh);
+                    if (item.SLPhat != 0)
+                    {
+                        PhieuPhatHanh phieuPhatHanh = new PhieuPhatHanh();
+                        phieuPhatHanh.LoaiVeSoId = loaiVeSoId;
+                        phieuPhatHanh.NgayPhat = ngayPhat;
+                        phieuPhatHanh.DaiLyId = db.DaiLies.Where(m => m.TenDaiLy == item.TenDaiLy).Select(m => m.DaiLyId).FirstOrDefault();
+                        phieuPhatHanh.SLPhat = item.SLPhat;
+                        db.PhieuPhatHanhs.Add(phieuPhatHanh);
+                    }
+                    
                 }
                 
                 db.SaveChanges();
