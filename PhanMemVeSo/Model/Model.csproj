@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bus\DaiLyBus.cs" />
+    <Compile Include="Bus\KetQuaXoSoBus.cs" />
     <Compile Include="EFModels\DaiLy.cs" />
     <Compile Include="EFModels\Giai.cs" />
     <Compile Include="EFModels\KetQuaXoSo.cs" />

@@ -1,4 +1,5 @@
-﻿using Model.EFModels;
+﻿using Model.Bus;
+using Model.EFModels;
 using Model.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -75,6 +76,26 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
             }
             return View(listKQXS);
             
+        }
+
+        public JsonResult ShowSoTrung(int? loaiVeSoId, System.DateTime? ngayDoSo,int soKhachHang)
+        {
+            System.DateTime ngayDo = ngayDoSo.GetValueOrDefault(System.DateTime.Now).Date;
+            string statusAlert="Số Không Trúng";
+            var listKetQua = db.KetQuaXoSoes.Where(m => m.LoaiVeSoId == loaiVeSoId & System.DateTime.Compare(m.NgayXoSo, ngayDo) == 0);
+            KetQuaXoSoBus kqxsb = new KetQuaXoSoBus();
+            foreach(var item in listKetQua)
+            {
+                if (kqxsb.do2So(soKhachHang, item.SoTrung))
+                {
+                    statusAlert = item.Giai.TenGiai;
+
+                }
+            }
+            return Json(new
+            {
+                statusAlertJS = statusAlert
+            });
         }
     }
 }
