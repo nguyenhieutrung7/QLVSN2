@@ -51,42 +51,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bus\DaiLyBus.cs" />
-    <Compile Include="EFModels\DaiLy.cs">
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\Giai.cs">
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\KetQuaXoSo.cs">
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\LoaiVeSo.cs">
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\PhanPhoiVeSo.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhanPhoiVeSo.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\PhanPhoiVeSo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\PhanPhoiVeSo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhanPhoiVeSo.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\PhieuDangKy.cs">
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\PhieuPhatHanh.cs">
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EFModels\PhieuThu.cs">
-      <DependentUpon>PhanPhoiVeSo.tt</DependentUpon>
-    </Compile>
+    <Compile Include="EFModels\DaiLy.cs" />
+    <Compile Include="EFModels\Giai.cs" />
+    <Compile Include="EFModels\KetQuaXoSo.cs" />
+    <Compile Include="EFModels\LoaiVeSo.cs" />
+    <Compile Include="EFModels\PhanPhoiVeSoContext.cs" />
+    <Compile Include="EFModels\PhieuDangKy.cs" />
+    <Compile Include="EFModels\PhieuPhatHanh.cs" />
+    <Compile Include="EFModels\PhieuThu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DotPhatHanh.cs" />
     <Compile Include="ViewModels\ListPhieuDangKyVM.cs" />
@@ -97,29 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="EFModels\PhanPhoiVeSo.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PhanPhoiVeSo.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="EFModels\PhanPhoiVeSo.edmx.diagram">
-      <DependentUpon>PhanPhoiVeSo.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EFModels\PhanPhoiVeSo.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PhanPhoiVeSo.edmx</DependentUpon>
-      <LastGenOutput>PhanPhoiVeSo.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EFModels\PhanPhoiVeSo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PhanPhoiVeSo.edmx</DependentUpon>
-      <LastGenOutput>PhanPhoiVeSo.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

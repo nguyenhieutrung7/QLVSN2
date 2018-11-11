@@ -84,16 +84,16 @@
                                             @Html.DisplayFor(modelItem => item.LoaiVeSo.TenTinh)
                                         </td>
                                         <td>
-                                            @Html.ActionLink("Sửa", "Edit", new { id = item.DaiLyId }) |
-                                            @Html.ActionLink("Thông tin", "Details", new { id = item.DaiLyId }) |
-                                            @Html.ActionLink("Xóa", "Delete", new { id = item.DaiLyId })
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.PhieuPhatHanhId }) |
+                                            @Html.ActionLink("Thông tin", "Details", new { id = item.PhieuPhatHanhId }) |
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.PhieuPhatHanhId })
                                         </td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
                         <p>
-                            @Html.ActionLink("Create New", "findDateandTypeVeSo")
+                            @Html.ActionLink("Create New", "findDateandTypeVeSo",null, new { @class = "btn btn-success btn-lg btn-block" })
                         </p>
                     </div>
 

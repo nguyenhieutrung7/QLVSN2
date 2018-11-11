@@ -7,7 +7,6 @@ create table LoaiVeSo
 (
 	LoaiVeSoId int IDENTITY(1,1) PRIMARY KEY,
 	TenTinh nvarchar(120) not null
-
 )
 
 create table DaiLy

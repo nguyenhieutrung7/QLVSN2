@@ -11,7 +11,7 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
 {
     public class QuanLyCongNoController : Controller
     {
-        private PhanPhoiVeSoEntities db = new PhanPhoiVeSoEntities();
+        private PhanPhoiVeSoContext db = new PhanPhoiVeSoContext();
         // GET: Admin/QuanLyCongNo
         public ActionResult Index(System.DateTime? ngayCanTim)
         {

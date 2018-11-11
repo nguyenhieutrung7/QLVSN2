@@ -13,7 +13,7 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
 {
     public class PhieuDangKiesController : Controller
     {
-        private PhanPhoiVeSoEntities db = new PhanPhoiVeSoEntities();
+        private PhanPhoiVeSoContext db = new PhanPhoiVeSoContext();
 
         // GET: Admin/PhieuDangKies
         public ActionResult Index()

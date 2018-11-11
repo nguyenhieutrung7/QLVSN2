@@ -12,7 +12,7 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
 {
     public class PhieuThusController : Controller
     {
-        private PhanPhoiVeSoEntities db = new PhanPhoiVeSoEntities();
+        private PhanPhoiVeSoContext db = new PhanPhoiVeSoContext();
 
         // GET: Admin/PhieuThus
         public ActionResult Index()

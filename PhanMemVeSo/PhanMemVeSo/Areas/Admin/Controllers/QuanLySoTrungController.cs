@@ -10,15 +10,15 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
 {
     public class QuanLySoTrungController : Controller
     {
-        private PhanPhoiVeSoEntities db = new PhanPhoiVeSoEntities();
+        private PhanPhoiVeSoContext db = new PhanPhoiVeSoContext();
         // GET: Admin/QuanLySoTrung
         public ActionResult Index(int? loaiVeSoId,System.DateTime? ngayDoSo)
         {
             System.DateTime ngayDo = ngayDoSo.GetValueOrDefault(System.DateTime.Now).Date;
             loaiVeSoId = loaiVeSoId ?? 1;
             ViewBag.NgayDo = ngayDo.ToString("yyyy-MM-dd");
-            ViewBag.LoaiVeSo = db.LoaiVeSoes.Where(m => m.LoaiVeSoId == loaiVeSoId).Select(m=>m.TenTinh).SingleOrDefault();
             var listKetQua = db.KetQuaXoSoes.Where(m => m.LoaiVeSoId == loaiVeSoId & System.DateTime.Compare(m.NgayXoSo, ngayDo) == 0).OrderBy(m=>m.GiaiId);
+            ViewBag.LoaiVeSoId = new SelectList(db.LoaiVeSoes, "LoaiVeSoId", "TenTinh");
             return View(listKetQua.ToList());
         }
 

@@ -14,7 +14,7 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
 {
     public class DotPhatHanhsController : Controller
     {
-        private PhanPhoiVeSoEntities db = new PhanPhoiVeSoEntities();
+        private PhanPhoiVeSoContext db = new PhanPhoiVeSoContext();
         // GET: Admin/DotPhatHanhs
         public ActionResult Index(Nullable<DateTime> searchDate)
         {

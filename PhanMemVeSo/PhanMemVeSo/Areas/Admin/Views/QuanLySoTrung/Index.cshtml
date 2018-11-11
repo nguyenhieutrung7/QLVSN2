@@ -38,11 +38,11 @@
                     <div class="card-header">
                         @using (Html.BeginForm())
                         {
-                            <p>
-                                Ngay Xo So: <input type="date" name="ngayDoSo" value="@ViewBag.NgayDo" />
-                                Ten Tinh: <input type="text" name="loaiVeSoId" value="@ViewBag.LoaiVeSo" />
-                                <input type="submit" />
-                            </p>
+                        <p>
+                            Ngay Xo So: <input type="date" name="ngayDoSo" value="@ViewBag.NgayDo" />
+                            Ten Tinh: @Html.DropDownList("LoaiVeSoId", null, htmlAttributes: new { })
+                            <input type="submit" />
+                        </p>
                         }
                     </div>
                     <div class="card-body">
@@ -98,7 +98,7 @@
                             </tbody>
                         </table>
                         <p>
-                            @Html.ActionLink("Create New", "findDateandTypeVeSo")
+                            @Html.ActionLink("Create New", "findDateandTypeVeSo",null, new { @class = "btn btn-success btn-lg btn-block" })
                         </p>
                     </div>
 

@@ -9,7 +9,7 @@ namespace Model.Bus
 {
     public class DaiLyBus
     {
-        private PhanPhoiVeSoEntities db = new PhanPhoiVeSoEntities();
+        private PhanPhoiVeSoContext db = new PhanPhoiVeSoContext();
         public decimal TinhToanSLPhatTheoDaiLy(int loaiVeSoId,int daiLyId, System.DateTime ngayPhatHienTai)
         {
             decimal slDangKy = db.PhieuDangKies.OrderByDescending(m => m.NgayDangKy).Where(m => m.DaiLyId == daiLyId & m.LoaiVeSoId==loaiVeSoId &System.DateTime.Compare(m.NgayDangKy, ngayPhatHienTai) <=0).Select(m=>m.SLDangKy).FirstOrDefault();
