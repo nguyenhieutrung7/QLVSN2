@@ -89,7 +89,12 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
                 if (kqxsb.do2So(soKhachHang, item.SoTrung))
                 {
                     statusAlert = item.Giai.TenGiai;
+                    break;
 
+                }
+                if(item.Giai.TenGiai== "Giải đặc biệt"&&kqxsb.doSoKhuyenKhich(soKhachHang,item.SoTrung))
+                {
+                    statusAlert = "Giải khuyến khích";
                 }
             }
             return Json(new
