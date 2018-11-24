@@ -39,6 +39,14 @@ namespace PhanMemVeSo.Areas.Admin.Controllers
             return View(listPhatHanh);
         }
 
+        public ActionResult AddSLBanDuoc(int idPPH, int slBanDc)
+        {
+            var phieuPH = db.PhieuPhatHanhs.Find(idPPH);
+            phieuPH.SLBanDuoc = slBanDc;
+            db.SaveChanges();
+            return RedirectToAction("Index", "DotPhatHanhs");
+        }
+
         // GET: Admin/PhieuPhatHanhs/Details/5
         public ActionResult Details(int? id)
         {
